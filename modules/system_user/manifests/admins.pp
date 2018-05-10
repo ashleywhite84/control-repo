@@ -1,14 +1,21 @@
 class system_user::admins {
 
-  Package { 'csh':
-    ensure => 'latest',
-        }
   group { 'staff':
     ensure => 'present',
         }
+
+if $facts['kernel'] == 'windows' {
   user { 'admin':
-    groups  => 'staff',
-    shell   => '/bin/csh',
-    require => Package['csh'],
+  groups  => 'staff',
+}
+} else {
+package { 'csh':
+  ensure => 'latest',
+  user { 'admin':
+  groups  => 'staff',
+  shell   => '/bin/csh',
+  require => Package['csh'],
+    }
+}
   }
 }
