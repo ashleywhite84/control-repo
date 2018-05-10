@@ -18,5 +18,4 @@ user { 'admin':
   require => Package['csh'],
     }
 }
-  }
 }
