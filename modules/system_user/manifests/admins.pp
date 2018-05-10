@@ -7,7 +7,7 @@ class system_user::admins {
     ensure => 'present',
         }
   user { 'admin':
-    groups   => 'staff',
+    groups  => 'staff',
     shell   => '/bin/csh',
     require => Package['csh'],
   }
