@@ -10,8 +10,9 @@ if $facts['kernel'] == 'windows' {
 }
 } else {
 package { 'csh':
-  ensure => 'latest',
-  user { 'admin':
+  ensure => 'latest'
+}
+user { 'admin':
   groups  => 'staff',
   shell   => '/bin/csh',
   require => Package['csh'],
