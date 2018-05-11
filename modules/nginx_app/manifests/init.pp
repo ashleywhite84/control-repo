@@ -24,10 +24,11 @@ service { 'nginx':
   notify  => Service['nginx'],
 }
 file { $docroot:
- owner   => 'www-data',
- group   => 'www-data',
- mode    => '0755',
- require => Service['nginx']
+owner   => 'www-data',
+group   => 'www-data',
+mode    => '0755',
+require => Service['nginx']
+recurse => true,
 }
 }
 else {
