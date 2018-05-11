@@ -1,4 +1,9 @@
-class nginx (
-  String $root = root,
-  boolean $sendfile = highpref,
-    )
+#
+class nginx {
+
+    include nginx
+  Package{'nginx':
+  ensure => 'latest',
+# source => 'yum',
+  }
+}
