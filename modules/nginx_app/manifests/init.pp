@@ -27,8 +27,16 @@ file { $docroot:
 owner   => 'www-data',
 group   => 'www-data',
 mode    => '0755',
-require => Service['nginx']
 recurse => true,
+require => Service['nginx']
+
+}
+file { "$docroot/index.html":
+owner   => 'www-date',
+group   => 'www-data',
+mode    =>  '0755',
+source  => "puppet:///modules/${mdoule_name}/index.html",
+require => File['index.html'],
 }
 }
 else {
