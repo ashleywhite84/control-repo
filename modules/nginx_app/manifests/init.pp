@@ -1,8 +1,8 @@
 #
 class nginx_app (
 
-string $docroot = "/var/www",
-string $portnum = "80",
+String $docroot = "/var/www",
+String $portnum = "80",
   )
 {
   #include chocolatey
