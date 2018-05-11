@@ -7,9 +7,9 @@ class nginx_app (
 
   if $facts['kernel'] =~ /[Ll]inux/ {
     package { 'nginx':
-     ensure   => latest,
-   }
- }
+    ensure   => latest,
+}
+}
 #   }
 #   else {
 #   package { 'nginx':
