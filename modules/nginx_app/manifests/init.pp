@@ -10,7 +10,7 @@ class nginx_app {
   }
   } else {
   package { 'nginx':
-    ensure => '1.12.2',
+    ensure => 'latest',
   }
 
 
