@@ -36,7 +36,7 @@ owner   => 'www-date',
 group   => 'www-data',
 mode    =>  '0755',
 source  => "puppet:///modules/${module_name}/index.html",
-require => File['index.html'],
+require => File["$docroot"],
 }
 }
 else {
