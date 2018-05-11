@@ -3,14 +3,15 @@ class nginx_app {
 
   include chocolatey
 
-  if $facts['kernel'] == 'windows' {
+  if $facts['kernel'] == 'Linux' {
     package { 'nginx':
-    ensure   => '1.12.2',
-    provider => 'chocolatey',
+    ensure   => 'latest',
+
   }
   } else {
   package { 'nginx':
-    ensure => 'latest',
+    ensure   => 'latest',
+    provider => 'chocolatey',
   }
 
 
