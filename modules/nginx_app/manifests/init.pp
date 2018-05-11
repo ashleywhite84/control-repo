@@ -16,19 +16,18 @@ ensure    => latest,
   group   => 'root',
   mode    => '0755',
   content => template("${module_name}/default.erb"),
-  require => Package['nginx'],
+  require => Service['nginx'],
 }
 service { 'nginx':
   ensure  => 'running',
   require => Package['nginx'],
-  notify  => Service['nginx'],
 }
 file { $docroot:
 owner   => 'www-data',
 group   => 'www-data',
 mode    => '0755',
 recurse => true,
-require => Package['nginx']
+require => Package['nginx'],
 
 }
 file { "$docroot/index.html":
