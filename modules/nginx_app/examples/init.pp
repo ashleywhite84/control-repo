@@ -1,1 +1,1 @@
-include nginx
+include nginx_app
