@@ -5,7 +5,7 @@ class nginx_app (
 {
   include chocolatey
 
-  if $facts['kernel'] ~= /[Ll]inux/ {
+  if $facts['kernel'] =~ /[Ll]inux/ {
     package { 'nginx':
      ensure   => latest,
    }
