@@ -1,3 +1,4 @@
-class nginx {
-  include nginx::Params
-}
+class nginx (
+  String $root = root,
+  boolean $sendfile = highpref,
+    )
