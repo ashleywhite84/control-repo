@@ -2,15 +2,12 @@
 class nginx (
   string $path = ''
   )
-
-{
-
-    include nginx
-  Package{'nginx':
-  ensure => 'latest',
-# source => 'yum',
+  class{'nginx':
+      manage_repo    => true,
+      package_source => 'nginx-mainline',
   }
-  file { "index.html":
-    ensure  => file,
-    content => template("${module_name}/index.html.erb"),
+
+  # file { "index.html":
+  #   ensure  => file,
+  #   content => template("${module_name}/index.html.erb"),
 }
