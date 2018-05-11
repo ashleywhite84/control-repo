@@ -1,6 +1,7 @@
 #
 class nginx_app (
 
+string $docroot = "/var/www",
   )
 {
   #include chocolatey
