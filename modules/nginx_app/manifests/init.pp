@@ -1,5 +1,5 @@
 #
-class nginx {
+class nginx_app {
 
   class{'nginx':
       manage_repo    => true,
