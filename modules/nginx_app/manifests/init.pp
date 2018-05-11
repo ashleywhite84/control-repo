@@ -1,10 +1,7 @@
 #
 class nginx_app {
 
-  class{'nginx':
-      manage_repo    => true,
-      package_source => 'nginx-mainline',
-  }
+  class{'nginx':}
 
   # file { "index.html":
   #   ensure  => file,
