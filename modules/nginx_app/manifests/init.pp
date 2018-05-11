@@ -10,6 +10,7 @@ class nginx_app (
     ensure   => latest,
 }
 }
+}
 #   }
 #   else {
 #   package { 'nginx':
