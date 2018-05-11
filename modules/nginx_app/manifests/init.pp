@@ -6,7 +6,7 @@ class nginx_app {
   if $facts['kernel'] == 'windows' {
     Package { 'nginx':
     ensure => '1.12.2',
-    source => 'chocolatey'
+    source => 'chocolatey',
   }
   } else {
   package { 'nginx':
