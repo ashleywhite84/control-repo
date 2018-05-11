@@ -10,7 +10,7 @@ class nginx_app {
   }
   } else {
   package { 'nginx':
-    ensure   => 'latest',
+    ensure   => latest,
     provider => 'chocolatey',
   }
 
