@@ -3,7 +3,7 @@ class nginx_app (
 
   )
 {
-  include chocolatey
+  #include chocolatey
 
   if $facts['kernel'] =~ /[Ll]inux/ {
     package { 'nginx':
