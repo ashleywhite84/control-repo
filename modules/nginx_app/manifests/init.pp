@@ -4,7 +4,7 @@ class nginx_app {
   include chocolatey
 
   if $facts['kernel'] == 'windows' {
-    Package { 'nginx':
+    package { 'nginx':
     ensure   => '1.12.2',
     provider => 'chocolatey',
   }
