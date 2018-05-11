@@ -11,7 +11,7 @@ if $facts['kernel'] =~ /[Ll]inux/ {
   package { 'nginx':
 ensure    => latest,
 }
-  file {'/etc/nginx/sites-available/default':
+  file { '/etc/nginx/sites-available/default':
   owner   => 'root',
   group   => 'root',
   mode    => '0755',
