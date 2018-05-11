@@ -40,7 +40,11 @@ require => File['index.html'],
 }
 }
 else {
+include chocolatey
 
+package {'nginx':
+provider => 'chocolatey',
+}
 }
 }
 #   }
