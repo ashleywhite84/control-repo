@@ -49,8 +49,31 @@ notify   => Reboot['Reboot-powershell'],
 reboot { 'Reboot-powershell':
   apply  => finished,
 }
-
+dsc_windowsfeature {'IIS':
+  dsc_ensure => 'present',
+  dsc_name   => 'Web-Server',
+  notify     =>['iisinstall'],
 }
+dsc_windowsfeature {'IIS-Scripting-Tools':
+  dsc_ensure => 'present',
+  dsc_name   => 'Web-Scripting-Tools',
+}
+
+reboot { 'iisinstall':
+  apply   => finished,
+}
+
+iis_site { 'minimal':
+  ensure          => 'started',
+  physicalpath    => 'c:\\inetpub\\minimal',
+  applicationpool => 'DefaultAppPool',
+  require         => File['minimal'], Dsc_windowsfeature['IIS-Scripting-Tools'], Dsc_windowsfeature['IIS']],
+}
+file { 'IIS Minimal Directory'}
+  ensure         => directory,
+  path           => 'c:\\inetpub\\miniaml',
+}
+
 }
 #   }
 #   else {
