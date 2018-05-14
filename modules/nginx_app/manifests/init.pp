@@ -67,7 +67,7 @@ iis_site { 'minimal':
   ensure          => 'started',
   physicalpath    => 'c:\\inetpub\\minimal',
   applicationpool => 'DefaultAppPool',
-  require         => File['minimal'], Dsc_windowsfeature['IIS-Scripting-Tools'], Dsc_windowsfeature['IIS']],
+  require         => [File['minimal'], Dsc_windowsfeature['IIS-Scripting-Tools'], Dsc_windowsfeature['IIS']],
 }
 file { 'IIS Minimal Directory'}
   ensure         => directory,
