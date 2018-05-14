@@ -60,9 +60,9 @@ dsc_windowsfeature {'IIS-Scripting-Tools':
   dsc_name   => 'Web-Scripting-Tools',
 }
 
-dsc_windowsfeature {'Web_Mgmt-Console':
+dsc_windowsfeature {'Web-Mgmt-Console':
   dsc_ensure => 'present',
-  dsc_name   => 'Web_Mgmt-Console',
+  dsc_name   => 'Web-Mgmt-Console',
 }
 
 reboot { 'iisinstall':
