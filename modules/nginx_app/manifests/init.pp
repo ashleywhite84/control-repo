@@ -74,7 +74,7 @@ file { 'IIS Minimal Directory':
   ensure         => directory,
   path           => 'c:\\inetpub\\miniaml',
 }
-
+}
 }
 #   }
 #   else {
