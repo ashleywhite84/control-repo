@@ -93,7 +93,7 @@ file { 'IIS Minimal Directory':
 
 file { "c:\\inetpub\\miniaml\\Web.Config":
 ensure  => file,
-content => template("${module_name}//Web.Config.erb"),
+content => template("${module_name}/Web.Config.erb"),
 }
 
 }
