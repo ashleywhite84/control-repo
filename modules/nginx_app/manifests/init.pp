@@ -41,9 +41,15 @@ require => File["${docroot}"],
 else {
 include chocolatey
 
-package {'nginx':
+package {'powershell':
 provider => 'chocolatey',
+notify   => Reboot['Reboot-powershell'],
 }
+
+reboot { 'Reboot-powershell':
+  apply  => finished,
+}
+
 }
 }
 #   }
