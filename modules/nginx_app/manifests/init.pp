@@ -54,6 +54,7 @@ dsc_windowsfeature {'IIS':
   dsc_name   => 'Web-Server',
   notify     =>['iisinstall'],
 }
+
 dsc_windowsfeature {'IIS-Scripting-Tools':
   dsc_ensure => 'present',
   dsc_name   => 'Web-Scripting-Tools',
