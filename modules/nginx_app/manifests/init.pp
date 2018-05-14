@@ -52,7 +52,7 @@ reboot { 'Reboot-powershell':
 dsc_windowsfeature {'IIS':
   dsc_ensure => 'present',
   dsc_name   => 'Web-Server',
-  notify     =>['iisinstall'],
+  notify     => Reboot['iisinstall'],
 }
 
 dsc_windowsfeature {'IIS-Scripting-Tools':
